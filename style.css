@@ -4,7 +4,7 @@
 }
 
 * {
-    font: 36px "blockfont", Verdana, sans-serif;;
+    font: 36px "blockfont";
 }
 
 html {
@@ -16,14 +16,18 @@ html {
 a { 
     color:white; 
 }
-    
+
+audio {
+    display : none;
+}
+
     
 pre {
-    font: 36px "blockfont", Verdana, sans-serif;;
     -webkit-font-smoothing : none;
     font-smooth: never;
     color: #eeeeee;
     }
+
 #content {
     position: absolute;
 }

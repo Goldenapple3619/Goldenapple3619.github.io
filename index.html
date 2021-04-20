@@ -6,6 +6,7 @@
         <meta property="og:title" content="Presentation" />
         <meta property="og:description" content="Developper"/>
         <link rel="stylesheet" type="text/css" href="./style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Goldenapple</title>
     </head>
     <body>
@@ -18,14 +19,16 @@
             </pre>
         </div>
         <script src="./script.js"></script>
-        <audio loop="loop" autoplay="autoplay" id="music">
-            <source src="./music.wav" type="audio/mpeg" />
+        <audio controls id="music">
+            <source src="./music.wav"/>
+            Votre Navigateur N'accepte pas l'audio !
         </audio>
         <script>
             var audio = document.getElementById("music");
+            audio.volume = 0.1;
             audio.play();
             audio.volume = 1;
-            var txt ='$cat ~/goldenapple.c';
+            var txt ='-$ cat ~/goldenapple.c';
             var github = "Goldenapple3619";
             afterWrite('$cat ~/goldenapple.c <br> Pseudo : Goldenapple <br> Discord : [Goldenapple]#3619 <br> Github : ' + github.link("https://github.com/Goldenapple3619") + '',2700)
         </script>
