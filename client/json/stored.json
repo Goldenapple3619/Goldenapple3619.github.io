@@ -59,7 +59,7 @@
     "language": "Python 3.8x",
     "compatibility": "Windows, Linux, MacOS",
     "version": "1.0.5",
-    "description": "Python TileGameEngine pygame based for 2d tile game making with extra abstraction, easy to use",
+    "description": "Python TileGameEngine pygame based for 2d tile game with extra abstraction, easy to use",
     "path": "#"
   }
 ]
