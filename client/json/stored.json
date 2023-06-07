@@ -2,8 +2,8 @@
   {
     "name": "Console Engine",
     "img": "../../datas/images/public/consoleengine.png",
-    "language": "Python 3.8x",
-    "compatibility": "Windows, Linux, MacOS",
+    "language": "Python",
+    "compatibility": "Any",
     "version": "3.0.0",
     "description": "Python library like ncurses useful for putting things on Terminal at certain positions It can be used for terminal UI creation, terminal Game, all kind of display on term. (work on any OS) (Output Only)",
     "path": "#"
@@ -11,8 +11,8 @@
   {
     "name": "Terminal UI",
     "img": "../../datas/images/public/terminalUI.png",
-    "language": "Python 3.8x",
-    "compatibility": "Windows, Linux, MacOS",
+    "language": "Python",
+    "compatibility": "Any",
     "version": "1.5.0",
     "description": "Terminal UI is a library based on \"ConsoleEngine\" used to make good looking and easy UI in terminal.",
     "path": "#"
@@ -20,8 +20,8 @@
   {
     "name": "CNDB",
     "img": "../../datas/images/public/logo1-c.png",
-    "language": "Python 3.8x",
-    "compatibility": "Windows, Linux, MacOS",
+    "language": "Python",
+    "compatibility": "Any",
     "version": "2.0.0",
     "description": "CNDB is a DataBase system, working in local and on external server it has a custom query language (CNQL), it can self host on any device and can store data types like string, int, float, char. databases are saved in .cnd files",
     "path": "#"
@@ -29,8 +29,8 @@
   {
     "name": "CNLang",
     "img": "../../datas/images/public/logo1-c.png",
-    "language": "Python 3.8x",
-    "compatibility": "Windows, Linux, MacOS",
+    "language": "Python",
+    "compatibility": "Any",
     "version": "Not finished",
     "description": "Light TopLevel Programming language. (just a test)",
     "path": "#"
@@ -38,8 +38,8 @@
   {
     "name": "CNPackage",
     "img": "../../datas/images/public/logo1-c.png",
-    "language": "Python 3.8x",
-    "compatibility": "Windows, Linux, MacOS",
+    "language": "Python",
+    "compatibility": "Any",
     "version": "1.0.0",
     "description": "Package manager for all my Tools, Frameworks, Engines, Libs, ... (unfinish)",
     "path": "#"
@@ -47,8 +47,8 @@
   {
     "name": "CNProject",
     "img": "../../datas/images/public/logo1-c.png",
-    "language": "Python 3.8x",
-    "compatibility": "Windows, Linux, MacOS",
+    "language": "Python",
+    "compatibility": "Any",
     "version": "1.0.0",
     "description": "Easy project manager and creator for any language to help create a project (with CNPackage integrate, support lot of language)",
     "path": "#"
@@ -56,10 +56,28 @@
   {
     "name": "CNEngine",
     "img": "../../datas/images/public/logo1-c.png",
-    "language": "Python 3.8x",
-    "compatibility": "Windows, Linux, MacOS",
+    "language": "Python",
+    "compatibility": "Any",
     "version": "1.0.5",
     "description": "Python TileGameEngine pygame based for 2d tile game with extra abstraction, easy to use",
     "path": "#"
+  },
+  {
+    "name": "CNVM",
+    "img": "../../datas/images/public/logo1-c.png",
+    "language": "Python, C, Javascript",
+    "compatibility": "Any",
+    "version": "1.0.0",
+    "description": "A VM with a custom compiled programming language ASM like (RSASM), originally written in Python, Rewritten from the C language and the Javascript language",
+    "path": "https://github.com/Goldenapple3619/CNVM"
+  },
+  {
+    "name": "CNLib",
+    "img": "../../datas/images/public/logo1-c.png",
+    "language": "Python",
+    "compatibility": "Any",
+    "version": "1.0.0",
+    "description": "A python lib divided in different parts: 'Testing', 'Graphic', 'Standard', 'System', 'Network'",
+    "path": "https://github.com/Goldenapple3619/CNLib_rep"
   }
 ]
