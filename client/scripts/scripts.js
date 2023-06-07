@@ -34,6 +34,8 @@ function put_data(data, container) {
     var name = document.createElement("h1");
     name.classList.add("title-product-v0");
     name.innerHTML = d.name;
+    if (d.path != '#')
+      name.onclick = () => {window.open(d.path, '_blank');};
     
     container_1.appendChild(name);
 
