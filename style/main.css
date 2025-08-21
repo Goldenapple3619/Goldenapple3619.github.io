@@ -1,0 +1,210 @@
+.window-header {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(161, 127, 196);
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 5px;
+
+    border: solid;
+    border-width: 1px;
+    border-color: transparent;
+    border-bottom-color: rgb(95, 73, 116);
+}
+
+.window-body {
+    background-color: rgb(229, 226, 233);
+
+    padding: 5px;
+    width: 100%;
+
+    min-height: fit-content;
+}
+
+.window {
+    border: solid;
+    border-width: 2px;
+    border-bottom-color: #3b3142;
+    border-right-color: #3b3142;
+    border-left-color: #f6ebff;
+    border-top-color: #f6ebff;
+
+    height: fit-content;
+    min-height: fit-content;
+}
+
+.window-pages {
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    
+    position: absolute; 
+
+
+    transform: translate(200px, 200px);
+}
+
+.window-main-frame {
+    margin-top: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-right: auto;
+    
+    position: absolute; 
+
+    transform: translate(-100px, -100px);
+}
+
+.text {
+    font-size: 15px;
+    color: #3b3142;
+}
+
+.container {
+    padding: 10px;
+
+    border: groove;
+    border-width: 2px;
+    border-bottom-color: 1px #3b3142;
+    border-right-color: 1px #3b3142;
+    border-left-color: 1px #f6ebff;
+    border-top-color: 1px #f6ebff;
+
+    position: relative;
+}
+
+.close-button {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg width='8' height='7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M0 0h2v1h1v1h2V1h1V0h2v1H7v1H6v1H5v1h1v1h1v1h1v1H6V6H5V5H3v1H2v1H0V6h1V5h1V4h1V3H2V2H1V1H0V0z' fill='%23000'/%3E%3C/svg%3E");
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100%;
+    display: block;
+    aspect-ratio : 1 / 1;
+
+    border: solid;
+    border-width: 2px;
+    border-bottom-color: #3b3142;
+    border-right-color: #3b3142;
+    border-left-color: #f6ebff;
+    border-top-color: #f6ebff;
+
+    box-sizing: border-box;
+    color: transparent;
+
+    background-color: rgb(229, 226, 233);
+}
+
+.close-button:active {
+    border-top-color: #3b3142;
+    border-left-color: #3b3142;
+    border-right-color: #f6ebff;
+    border-bottom-color: #f6ebff;
+}
+
+.container legend {
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+
+    background-blend-mode:normal;
+    background-color: rgb(229, 226, 233);
+
+    font-weight: lighter;
+    font-size: 14px;
+    color: #584a61;
+
+    padding-left: 4px;
+    padding-right: 4px;
+
+    left: 10px;
+    top: -10px;
+}
+
+.button {
+    text-decoration: none;
+    font-size: 15px;
+    width:fit-content;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-style: none;
+
+    border: solid;
+    border-width: 2px;
+
+    border-bottom-color: #3b3142;
+    border-right-color: #3b3142;
+    border-left-color: #f6ebff;
+    border-top-color: #f6ebff;
+
+    background-color: rgb(229, 226, 233);
+}
+
+.button:active {
+    border-top-color: #3b3142;
+    border-left-color: #3b3142;
+    border-right-color: #f6ebff;
+    border-bottom-color: #f6ebff;
+}
+
+.link {
+    font-size: 15px;
+    color: #551A8B;
+    text-decoration: none;
+
+    width: fit-content;
+}
+
+.link:hover {
+    text-decoration: underline;
+    width: fit-content;
+    color: #7721c8;
+}
+
+.link:active {
+    
+}
+
+@media screen and (841px >= width), screen and (744px >= height) {
+    .window-pages {
+        transform: translate(100px, 100px);
+    }
+
+    .window-main-frame {
+        transform: translate(-50px, -50px);
+    }
+}
+
+@media screen and (651px >= width) {
+    .window-pages {
+        transform: translate(50px, 50px);
+    }
+
+    .window-main-frame {
+        transform: translate(-25px, -25px);
+    }
+}
+
+@media screen and (600px >= width) {
+    .app {
+        overflow-y: scroll;
+        justify-content: start;
+    }
+    .window-pages {
+        transform: translate(0px, 0px);
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative;
+    }
+
+    .window-main-frame {
+        transform: translate(0px, 0px);
+        width: 100% !important;
+        position: relative;
+    }
+}
