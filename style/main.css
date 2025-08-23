@@ -208,3 +208,21 @@
         position: relative;
     }
 }
+
+@media screen and (600px >= width) {
+    .app {
+        overflow-y: scroll;
+        justify-content: start;
+    }
+    .window-fill-x-auto {
+        width: 100% !important;
+        max-width: 100% !important;
+        position: relative;
+    }
+
+    .window-fill-y-auto, .window-fill-y-auto .window-body {
+        height: 100% !important;
+        max-height: 100% !important;
+        position: relative;
+    }
+}

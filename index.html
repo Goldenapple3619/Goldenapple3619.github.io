@@ -11,7 +11,7 @@
 
         <link rel="shortcut icon" href="/assets/logo.png" />
         <link rel="apple-touch-icon" href="/assets/logo.png" />
-        <link rel="image_src" href="" />
+        <link rel="image_src" href="/assets/logo.png" />
         <link rel="search" type="application/opensearchdescription+xml" title="Goldenapple3619's Website" href="/opensearch.xml" />
         <link rel="canonical" href="https://Goldenapple3619.github.io" />
 
@@ -38,7 +38,7 @@
             <div class="window-main-frame window" style="width: calc(100% - 300px); max-width: 700px;">
                 <div class="window-header" style="display: flex; flex-direction: row; justify-content: space-between;">
                     <bold>Goldenapple3619</bold>
-                    <button class="close-button"></button>
+                    <button class="close-button" onclick="document.location.href='/';"></button>
                 </div>
                 <div class="window-body" style="height: 100vh; max-height: 500px; display: flex; flex-direction: column;">
                     <div class="infos container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
@@ -61,8 +61,8 @@
 
             <div class="window-pages window" style="width: calc(100% - 300px); max-width: 400px;">
                 <div class="window-header" style="display: flex; flex-direction: row; justify-content: space-between;">
-                    <bold>Pages (soon...)</bold>
-                    <button class="close-button"></button>
+                    <bold>Pages</bold>
+                    <button class="close-button" onclick="document.location.href='/';"></button>
                 </div>
                 <div class="window-body" style="height: 100vh; max-height: 300px;">
                     <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;">
@@ -70,14 +70,17 @@
                         <!-- <button class="button">Test</button> -->
                     </div>
 
-                    <div class="container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;">
                         <legend>Art</legend>
 
+                        <button class="button" onclick="document.location.href='/pages/drawing';">Drawing</button>
+                        <button class="button" onclick="document.location.href='#';">Music</button>
                     </div>
 
-                    <div class="container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;">
                         <legend>Other</legend>
 
+                        <button class="button" onclick="document.location.href='/pages/skillsurfing';">CS:S SkillSurfing</button>
                     </div>
                 </div>
             </div>
