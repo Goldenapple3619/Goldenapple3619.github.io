@@ -152,6 +152,24 @@
     border-bottom-color: #f6ebff;
 }
 
+.button-inactive {
+    cursor:not-allowed;
+    color: #594b64;
+
+    background-color: rgba(0, 0, 0, 0.06);
+    border-bottom-color: #645470;
+    border-right-color: #645470;
+    border-left-color: #c8bfcf;
+    border-top-color: #c8bfcf;
+}
+
+.button-inactive:active {
+    border-bottom-color: #645470;
+    border-right-color: #645470;
+    border-left-color: #c8bfcf;
+    border-top-color: #c8bfcf;
+}
+
 .link {
     font-size: 15px;
     color: #551A8B;
