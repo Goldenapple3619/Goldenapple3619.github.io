@@ -1,0 +1,12 @@
+.bouncy {
+    position: absolute;
+
+    background-color:#000;
+    -webkit-mask-image: url(/assets/DVD_logo.svg);
+    mask-image: url(/assets/DVD_logo.svg);
+    background-size:contain;
+    background-repeat:no-repeat;
+
+    transition: background-color;
+    transition-duration: 1s;
+}
