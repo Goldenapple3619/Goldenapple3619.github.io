@@ -73,8 +73,8 @@
                     index = (index + 1) % COLORLIST.length;
                 }
 
-                element.style.left = `${rect.left + parseFloat(element.getAttribute("directionX")) * 0.4 * elapsed}px`;
-                element.style.top = `${rect.top + parseFloat(element.getAttribute("directionY")) * 0.4 * elapsed}px`;
+                element.style.left = `${rect.left + parseFloat(element.getAttribute("directionX")) * 0.25 * elapsed}px`;
+                element.style.top = `${rect.top + parseFloat(element.getAttribute("directionY")) * 0.25 * elapsed}px`;
 
             });
 
