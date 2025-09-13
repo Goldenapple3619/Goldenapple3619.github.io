@@ -19,6 +19,13 @@ body {
 
     background-color: rgb(217, 204, 224);
 
+    /* background-image: url();
+    background-size: cover;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    backdrop-filter: blur(5px); */
+
     position: relative;
 }
 
@@ -38,4 +45,10 @@ body {
     align-items: center;
 
     position: relative;
+}
+
+@keyframes ranbow-slide {
+  to {
+    background-position:20vw;
+  }
 }

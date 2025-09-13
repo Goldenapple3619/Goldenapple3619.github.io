@@ -73,23 +73,32 @@
                     <button class="close-button" onclick="document.location.href='/';"></button>
                 </div>
                 <div class="window-body" style="height: 100vh; max-height: 300px;">
-                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;">
+                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap; row-gap: 10px;">
                         <legend>Dev</legend>
                         <button class="button" onclick="document.location.href='/pages/web';">Web</button>
+                        <button class="button button-inactive" onclick="document.location.href='/pages/tools';" disabled>Tools</button>
+                        <button class="button button-inactive" onclick="document.location.href='/pages/libs';" disabled>Libs</button>
+                        <button class="button button-inactive" onclick="document.location.href='/pages/other';"disabled>Other</button>
                     </div>
 
-                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;">
+                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;row-gap: 10px;">
                         <legend>Art</legend>
 
                         <button class="button" onclick="document.location.href='/pages/drawing';">Drawing</button>
-                        <button class="button button-inactive" onclick="// document.location.href='#';">Music</button>
+                        <button class="button button-inactive" onclick="document.location.href='/pages/music';" disabled>Music</button>
                     </div>
 
-                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;">
+                    <div class="container" style="display: flex; flex-direction: row; justify-content: space-between; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap; row-gap: 10px;">
                         <legend>Other</legend>
 
                         <button class="button" onclick="document.location.href='/pages/skillsurfing';">CS:S SkillSurfing</button>
                     </div>
+
+                    <!-- <div class="container" style="display: flex; flex-direction: row; justify-content: center; margin-left: 20px; margin-right: 20px; margin-top: 10px; flex-wrap: wrap;">
+                        <legend>???</legend>
+
+                        <button class="button" style="width: 100%; animation: ranbow-slide 2s linear infinite; background-image: linear-gradient(90deg,rgba(161, 127, 196, 1) 0%, rgba(217, 204, 224, 1) 51%, rgba(161, 127, 196, 1) 100%);" onclick="document.location.href='/';">I Feel Lucky!</button>
+                    </div> -->
                 </div>
             </div>
         </div>
