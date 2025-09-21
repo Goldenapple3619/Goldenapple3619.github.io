@@ -46,9 +46,9 @@
     top: 50%;
     transform: translateY(-50%);
 
-    background: rgba(0,0,0,0.5);
+    background: var(--bg-color-overlay-item);
 
-    color: white;
+    color: var(--text-color-overlay-item);
     border: none;
 
     cursor: pointer;
@@ -59,6 +59,10 @@
     height: 30px;
 
     font-size: 10px;
+}
+
+.gallery-container {
+    background-color: var(--secondary-color);
 }
 
 .gallery-btn.prev {

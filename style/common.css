@@ -17,7 +17,7 @@ body {
     height: 100vh;
     overflow: hidden;
 
-    background-color: rgb(217, 204, 224);
+    background-color: var(--bg-color-main);
 
     /* background-image: url();
     background-size: cover;

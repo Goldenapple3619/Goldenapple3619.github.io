@@ -1,11 +1,16 @@
 (() => {
     var _loaded = (() => {
         const gallery = document.querySelector(".gallery");
-        const items = document.querySelectorAll(".gallery-item");
         const prevBtn = document.querySelector(".gallery-btn.prev");
         const nextBtn = document.querySelector(".gallery-btn.next");
+        
+        var items = document.querySelectorAll(".gallery-item");
 
         let currentIndex = 0;
+
+        window.document.reloadGallery = (() => {
+            items = document.querySelectorAll(".gallery-item");
+        });
 
         function updateGallery() {
             gallery.style.transform = `translateX(-${currentIndex * 100}%)`;

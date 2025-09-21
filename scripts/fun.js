@@ -23,18 +23,27 @@
         var elements = Array.from(document.querySelectorAll(".bouncy"));
         var index = 0;
 
-        console.log(elements);
+        elements.forEach(element => {
+            console.log(element.getAttribute("randomizePos"));
+            if (!element.getAttribute("directionX"))
+                element.setAttribute("directionX", Math.random() > 0.5 ? "-1" : "1");
+            if (!element.getAttribute("directionY"))
+                element.setAttribute("directionY", Math.random() > 0.5 ? "-1" : "1");
+            if (element.getAttribute("randomizePos"))
+                element.style.left = `${Math.floor(Math.random() * (window.innerWidth - 0 + 1)) + 0}px`;
+            if (element.getAttribute("randomizePos"))
+                element.style.top = `${Math.floor(Math.random() * (window.innerHeight - 0 + 1)) + 0}px`;
+        });
 
         function animateBouncy(deltatime) {
+            let elapsed;
+
             if (startTime === null)
                 startTime = deltatime;
-            let elapsed = deltatime - startTime;
 
-            // console.log(elapsed);
-
+            elapsed = deltatime - startTime;
             startTime = deltatime;
-    
-            
+
             elements.forEach(element => {
                 var rect = element.getBoundingClientRect();
 
@@ -82,7 +91,6 @@
         }
 
         requestAnimationFrame(animateBouncy);
-        // console.log("ok");
     });
 
     if (document.readyState === "loading") {

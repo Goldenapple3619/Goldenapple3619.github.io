@@ -1,0 +1,26 @@
+[
+    {
+        "title": "Virtual Web-Application environnement",
+        "description": "A virtual Web-Application environnement allowing the access to webapps via a webinterface with a virtual desktop, user system, file system, etc. Similar to Microsoft Office for example.\n\nFrontend Written in pure HTML, CSS, JS.\nBackend Written in JavaScript for the API, Python for the websocket.\nDatabase: postgres\nDeployement: Docker",
+        "links": [
+            {
+                "name": "link to the repository",
+                "url": "https://github.com/Goldenapple3619/webapp-env"
+            }
+        ]
+    },
+    {
+        "title": "Personal website",
+        "description": "A personal static website written in pure HTML, CSS and JavaScript with no third party library or framework.",
+        "links": [
+            {
+                "name": "link to the website",
+                "url": "https://Goldenapple3619.github.io"
+            },
+            {
+                "name": "link to the repository",
+                "url": "https://github.com/Goldenapple3619/Goldenapple3619.github.io"
+            }
+        ]
+    }
+]
