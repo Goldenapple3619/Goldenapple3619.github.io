@@ -219,6 +219,48 @@ body {
     
 }
 
+.progress-bar {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+
+    border-radius: 0;
+
+    box-shadow: inset -2px -2px var(--light-border), inset 2px 2px var(--dark-border);
+    box-sizing: border-box;
+
+    height: 32px;
+    padding: 4px;
+    position: relative;
+}
+
+.progress-bar-content {
+    background-color: transparent;
+    background-image: linear-gradient(90deg, navy 16px, transparent 0 2px);
+    background-repeat: repeat;
+    background-size: 18px 100%;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+}
+
+.progress-bar-content.effect {
+    animation: load-effect 1s linear;
+}
+
+@keyframes load-effect {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+
 @media screen and (841px >= width), screen and (744px >= height) {
     .window-pages {
         transform: translate(100px, 100px);

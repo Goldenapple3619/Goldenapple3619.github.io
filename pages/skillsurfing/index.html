@@ -45,7 +45,10 @@
                 <div class="window-body" style="height: 100vh; max-height: 500px; display: flex; flex-direction: column;">
                     <div class="playlist container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                         <legend>My videos</legend>
-                        <iframe width="auto" height="315" src="https://www.youtube.com/embed/videoseries?si=3VyegEJSG0vFup1Z&amp;list=PLb5Qvek6le7Vp7ZRp6qxba9y4xhyHo7sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        <div class="progress-bar">
+                            <div class="progress-bar-content" id="progressEmbedVideo" style="width: 0%;"></div>
+                        </div>
+                        <iframe id="embedVideo" width="auto" height="315" src="https://www.youtube.com/embed/videoseries?si=3VyegEJSG0vFup1Z&amp;list=PLb5Qvek6le7Vp7ZRp6qxba9y4xhyHo7sg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     </div>
                     <div class="ksf container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                         <legend>Links</legend>
@@ -56,5 +59,31 @@
                 </div>
             </div>
         </div>
+
+        <script>
+        (() => {
+            let embedVideo = document.getElementById("embedVideo");
+            let progressEmbedVideo = document.getElementById('progressEmbedVideo');
+
+            progressEmbedVideo.style.width = "";
+
+            embedVideo.style.display = "none";
+            progressEmbedVideo.classList.add("effect")
+
+            if (embedVideo.readyState == 'complete') {
+                progressEmbedVideo.classList.remove("effect")
+                progressEmbedVideo.parentNode.style.display = "none";
+
+                embedVideo.style.display = "block";
+            }
+
+            embedVideo.addEventListener("load", (data) => {
+                progressEmbedVideo.classList.remove("effect")
+                progressEmbedVideo.parentNode.style.display = "none";
+
+                embedVideo.style.display = "block";
+            });
+        })();
+        </script>
     </body>
 </html>
