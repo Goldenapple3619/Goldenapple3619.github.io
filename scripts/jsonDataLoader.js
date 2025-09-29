@@ -1,7 +1,7 @@
 __jloader = (() => {
     _instance = null;
 
-    function request(url, body = undefined, method = "GET", headers = {}) {
+    function request(url, body = undefined, method = "GET", headers = {}, withCredentials = false) {
         return new Promise((resolve, reject) => {
             var req = (window.XMLHttpRequest ? new XMLHttpRequest : new ActiveXObject("Microsoft.XMLHTTP"));
 
@@ -9,7 +9,7 @@ __jloader = (() => {
             Object.keys(headers).forEach((x) => {
                 req.setRequestHeader(x, headers[x]);
             });
-            req.withCredentials = true;
+            req.withCredentials = withCredentials;
             req.onreadystatechange = () => {
                 if (req.readyState === XMLHttpRequest.DONE && req.status >= 200 && req.status <= 299) {
                     resolve({status: true, loaded: url, type: "url", request: req});
@@ -50,8 +50,6 @@ __jloader = (() => {
     
         return ({
             get: function (key) {
-                console.log(key);
-                console.log(instanceJSONs);
                 return (instanceJSONs[key]);
             },
             fetch: function (url, key = undefined, noCache = false) {
