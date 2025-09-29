@@ -51,7 +51,7 @@
                         <legend>Digital drawing</legend>
                     
                         <div class="gallery-controls">
-                            <div class="gallery" style="height: 300px;">
+                            <div class="gallery gallery-digital" style="height: 300px;">
                                 <div class="gallery-item gallery-container display-state" style="border-radius: 0; display: flex; align-items: center;">
                                     <div class="progress-bar" style="width: 100%;">
                                         <div class="progress-bar-content" id="progressContent" style="width: 0%;"></div>
@@ -65,10 +65,23 @@
 
                     </div>
 
-                    <div class="traditional container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+                    <!-- <div class="traditional container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                         <legend>Traditional drawing</legend>
+
+                        <div class="gallery-controls">
+                            <div class="gallery gallery-traditional" style="height: 300px;">
+                                <div class="gallery-item gallery-container display-state" style="border-radius: 0; display: flex; align-items: center;">
+                                    <div class="progress-bar" style="width: 100%;">
+                                        <div class="progress-bar-content" id="progressContentTrad" style="width: 0%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="gallery-btn prev">❮</button>
+                            <button class="gallery-btn next">❯</button>
+                        </div>
                     
-                    </div>
+                    </div> -->
                     <div class="instagram container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                         <legend>Links</legend>
 
@@ -80,54 +93,58 @@
 
         <script type="text/javascript">
         (() => {
-            var progressContent = document.getElementById("progressContent");
-            var container = document.body.querySelector(".gallery");
-            var state = container.querySelector(".display-state");
-            var prev = container.parentNode.querySelector(".gallery-btn.prev");
-            var next = container.parentNode.querySelector(".gallery-btn.next");
+            function loadSelection(container, json) { 
+                var progressContent = container.querySelector(".progress-bar-content");
+                var state = container.querySelector(".display-state");
+                var prev = container.parentNode.querySelector(".gallery-btn.prev");
+                var next = container.parentNode.querySelector(".gallery-btn.next");
 
-            let images = [];
-            var imageLoaded = 0;
-            var imageToLoad = 0;
+                let images = [];
+                var imageLoaded = 0;
+                var imageToLoad = 0;
 
-            prev.style.display = "none";
-            next.style.display = "none"; 
+                prev.style.display = "none";
+                next.style.display = "none"; 
 
-            window.document.JLI.fetch("/assets/json/digital-drawings.json", "ddlist").then((list) => {
-                progressContent.style.width = `2%`;
-                imageToLoad = list.length;
+                window.document.JLI.fetch(json).then((list) => {
+                    progressContent.style.width = `2%`;
+                    imageToLoad = list.length;
 
-                list.forEach(element => {
-                    let child = new Image();
-                    
-                    child.src = element.url;
-                    child.classList.add("gallery-item");
+                    list.forEach(element => {
+                        let child = new Image();
+                        
+                        child.src = element.url;
+                        child.classList.add("gallery-item");
 
-                    images.push(child);
-                });
-
-                Array.from(images).filter(img => img.complete).map(() => {
-                    ++imageLoaded;
-                    progressContent.style.width = `${(imageLoaded / imageToLoad) * 100.0}%`;
-                });
-
-                Promise.all(Array.from(images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = () => {++imageLoaded; progressContent.style.width = `${(imageLoaded / imageToLoad) * 100.0}%`; resolve();}; }))).then(() => {
-                    progressContent.style.width = `100%`;
-                    
-                    container.innerHTML = '';
-
-                    images.forEach(image => {
-                        container.appendChild(image);
+                        images.push(child);
                     });
 
-                    prev.style.display = "inline-block";
-                    next.style.display = "inline-block"; 
+                    Array.from(images).filter(img => img.complete).map(() => {
+                        ++imageLoaded;
+                        progressContent.style.width = `${(imageLoaded / imageToLoad) * 100.0}%`;
+                    });
 
-                    window.document.reloadGallery();
+                    Promise.all(Array.from(images).filter(img => !img.complete).map(img => new Promise(resolve => { img.onload = img.onerror = () => {++imageLoaded; progressContent.style.width = `${(imageLoaded / imageToLoad) * 100.0}%`; resolve();}; }))).then(() => {
+                        progressContent.style.width = `100%`;
+                        
+                        container.innerHTML = '';
+
+                        images.forEach(image => {
+                            container.appendChild(image);
+                        });
+
+                        prev.style.display = "inline-block";
+                        next.style.display = "inline-block"; 
+
+                        window.document.reloadGallery();
+                    });
+                }).catch(err => {
+                    state.innerText = err;
                 });
-            }).catch(err => {
-                state.innerText = err;
-            });
+            }
+
+            loadSelection(document.body.querySelector(".gallery-digital"), "/assets/json/digital-drawings.json");
+            // loadSelection(document.body.querySelector(".gallery-traditional"), "/assets/json/traditional-drawings.json");
         })();
         </script>
     </body>

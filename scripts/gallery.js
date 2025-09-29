@@ -1,36 +1,61 @@
 (() => {
     var _loaded = (() => {
-        const gallery = document.querySelector(".gallery");
-        const prevBtn = document.querySelector(".gallery-btn.prev");
-        const nextBtn = document.querySelector(".gallery-btn.next");
-        
-        var items = document.querySelectorAll(".gallery-item");
+        const galleries = document.querySelectorAll(".gallery");
+        const galleriesItems = {};
 
-        let currentIndex = 0;
+        var nextID = 1;
 
-        window.document.reloadGallery = (() => {
-            items = document.querySelectorAll(".gallery-item");
+        var hash = function(div){
+            div.hashID = div.hashID || ('hashID_' + (nextID++));
+            return div.hashID;
+        }
+
+        var galleryDefinitor = (function (gallery) {
+            let prevBtn = gallery.parentNode.querySelector(".gallery-btn.prev");
+            let nextBtn = gallery.parentNode.querySelector(".gallery-btn.next");
+            
+            let items = Array.from(gallery.querySelectorAll(".gallery-item"));
+
+            let currentIndex = 0;
+
+            galleriesItems[hash(gallery)] = items;
+
+            function updateGallery() {
+                gallery.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateGallery();
+            }
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateGallery();
+            }
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateGallery();
+            }
+
+            nextBtn.addEventListener("click", nextSlide);
+            prevBtn.addEventListener("click", prevSlide);
         });
 
-        function updateGallery() {
-            gallery.style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
+        galleries.forEach(galleryDefinitor);
 
-        function goToSlide(index) {
-            currentIndex = index;
-            updateGallery();
-        }
-        function nextSlide() {
-            currentIndex = (currentIndex + 1) % items.length;
-            updateGallery();
-        }
-        function prevSlide() {
-            currentIndex = (currentIndex - 1 + items.length) % items.length;
-            updateGallery();
-        }
+        window.document.reloadGallery = (() => {
+            galleries.forEach((gallery) => {
+                if (!galleriesItems[hash(gallery)])
+                    galleriesItems[hash(gallery)] = Array.from(gallery.querySelectorAll(".gallery-item"));
+                else {
+                    galleriesItems[hash(gallery)].splice(0,galleriesItems[hash(gallery)].length);
 
-        nextBtn.addEventListener("click", nextSlide);
-        prevBtn.addEventListener("click", prevSlide);
+                    gallery.querySelectorAll(".gallery-item").forEach((item) => {
+                        galleriesItems[hash(gallery)].push(item);
+                    });
+                }
+            });
+        });
     });
 
     if (document.readyState === "loading") {
