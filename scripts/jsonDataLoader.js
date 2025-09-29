@@ -1,4 +1,4 @@
-__jloader = (() => {
+var __jloader = (() => {
     _instance = null;
 
     function request(url, body = undefined, method = "GET", headers = {}, withCredentials = false) {
