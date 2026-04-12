@@ -24,6 +24,14 @@
     -webkit-user-drag: none;
     -moz-user-select: none;
     -ms-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+
+    transition: transform 80ms ease-out;
+}
+
+.sakura:active {
+    transform: scale(0.9);
 }
 
 .particle {
@@ -33,6 +41,8 @@
     -moz-user-select: none;
     -ms-user-select: none;
     pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 .sakura:hover {
