@@ -90,26 +90,6 @@ body {
     transform: translate(-100px, -100px);
 }
 
-.window-main-frame:before {
-    bottom: 30px;
-    left: -5px;
-    display: block;
-    position: absolute;
-    content: "";
-    background-image: url(/assets/sakura.gif);
-    width: 144px;
-    height: 96px;
-}
-
-@media (max-height: 390px) {
-    .window-main-frame:before {
-        bottom: 10px;
-        right: -5px;
-        left: auto;
-    }
-}
-
-
 .text {
     font-size: 15px;
     color: var(--text-color);

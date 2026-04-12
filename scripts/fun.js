@@ -24,7 +24,6 @@
         var index = 0;
 
         elements.forEach(element => {
-            console.log(element.getAttribute("randomizePos"));
             if (!element.getAttribute("directionX"))
                 element.setAttribute("directionX", Math.random() > 0.5 ? "-1" : "1");
             if (!element.getAttribute("directionY"))
@@ -91,6 +90,134 @@
         }
 
         requestAnimationFrame(animateBouncy);
+    });
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", _loaded);
+    } else {
+        _loaded();
+    }
+})();
+
+var _spawn_heart = (() => { 
+    var particles = [];
+    var lastTime = performance.now();
+    var updateParticles = ((dt) => {
+        for (var i = 0; i < particles.length; ++i) {
+            if (particles[i].getClock() >= particles[i].getLifetime()) {
+                particles[i].destroy();
+                particles.splice(i, 1);
+                --i;
+                continue;
+            }
+            particles[i].update(dt);
+        }
+    });
+    var mainloop = ((now) => {
+        let dt = now - lastTime;
+        lastTime = now;
+
+        updateParticles(dt);
+        requestAnimationFrame(mainloop);
+    });
+
+    var Particle = (() => {
+        function init(x, y, velX, velY, lifetime, dom) {
+            var x = x;
+            var y = y;
+            var vel = [velX, velY];
+            var lifetime = lifetime
+            var clock = 0;
+            var dom = dom;
+            let gravity = 0.002;
+
+            return ({
+                update: function (dt) {
+                    let lifeRatio = 1 - (clock / lifetime);
+                    let scale = 0.5 + lifeRatio * 0.5;
+
+                    vel[1] -= gravity * dt;
+
+                    x -= vel[0] * dt;
+                    y -= vel[1] * dt;
+    
+                    clock += dt;
+
+                    dom.style.left = `${x}px`;
+                    dom.style.top = `${y}px`;
+
+                    dom.style.opacity = lifeRatio;
+                    dom.style.transform = ``;
+                    dom.style.transform = `scale(${scale}) rotate(${clock * -vel[0] * 0.5}deg)`;
+                },
+
+                getClock: function () {
+                    return (clock);
+                },
+
+                getLifetime: function () {
+                    return (lifetime);
+                },
+                destroy: function () {
+                    dom.remove();
+                }
+            });
+        }
+
+        return ({
+            init: init
+        });
+    })();
+
+    requestAnimationFrame(mainloop);
+
+    return (((e) => {
+        var eRect = e.currentTarget.getBoundingClientRect();
+        
+        var dom = document.createElement("div");
+
+        dom.classList.add("particle");
+        dom.style.position = "absolute";
+        dom.style.zIndex = "10";
+        dom.style.width = "20px";
+        dom.style.height = "20px";
+        dom.style.backgroundImage = "url(/assets/heart-s.svg)";
+        dom.style.backgroundSize = "contain";
+        dom.style.backgroundRepeat = "no-repeat";
+        dom.style.backgroundPosition = "center";
+        
+        // var spawnX = eRect.x + eRect.width / 2.0 - 10;
+        // var spawnY = eRect.y + 20 - 10; 
+
+        var spawnX = e.clientX - 10;
+        var spawnY = e.clientY + 20 - 10; 
+        
+        dom.style.left = `${spawnX}px`;
+        dom.style.top = `${spawnY}px`;
+
+        document.body.appendChild(dom);
+
+        let velX = (Math.random() - 0.5) * 0.2;
+        let velY = 0.6 + Math.random() * 0.3;
+
+        particles.push(Particle.init(
+            spawnX,
+            spawnY,
+            velX,
+            velY,
+            Math.floor(Math.random() * (2000 - 500 + 1)) + 500,
+            dom
+        ));
+    }));
+})();
+
+(() => {
+    let _loaded = (() => {
+        let s = document.querySelector(".sakura");
+        if (s) {
+            s.addEventListener("click", _spawn_heart);   
+            document.querySelector(".sakura").ondragstart = () => false;
+        }
     });
 
     if (document.readyState === "loading") {

@@ -45,12 +45,12 @@
 
             </div>
         
-            <div class="window-main-frame window" style="width: calc(100% - 300px); max-width: 700px;">
-                <div class="window-header" style="display: flex; flex-direction: row; justify-content: space-between;">
+            <div class="window-main-frame window" style="z-index: 0; width: calc(100% - 300px); max-width: 700px;">
+                <div class="window-header" style="display: flex; flex-direction: row; justify-content: space-between; z-index: 2;">
                     <bold>Goldenapple3619</bold>
                     <button class="close-button" onclick="document.location.href='/';"></button>
                 </div>
-                <div class="window-body" style="height: 100vh; max-height: 500px; display: flex; flex-direction: column;">
+                <div class="window-body" style="height: 100vh; max-height: 500px; display: flex; flex-direction: column; z-index: 2;">
                     <div class="infos container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
                         <legend>Infos</legend>
                         <p class="text">
@@ -59,7 +59,7 @@
                             You will find more about me and my interests on my website.
                         </p>
                     </div>
-                    <div class="links container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px;">
+                    <div class="links container" style="display: flex; flex-direction: column; margin-left: 20px; margin-right: 20px; margin-top: 10px; z-index: 3;">
                         <legend>Links</legend>
                         <a class="link" href="https://www.youtube.com/@goldenapple3619">Youtube</a>
                         <a class="link" href="https://www.instagram.com/goldenapple3619">Instagram</a>
@@ -68,6 +68,7 @@
                         <a class="link" href="https://github.com/Goldenapple3619">Github</a>
                     </div>
                 </div>
+                <div class="sakura" style="z-index: 1;"></div>
             </div>
 
             <div class="window-pages window" style="width: calc(100% - 300px); max-width: 400px;">

@@ -10,3 +10,38 @@
     transition: background-color;
     transition-duration: 1s;
 }
+
+.sakura {
+    top: calc(100% - 96px - 30px);
+    left: -5px;
+    position: absolute;
+    background-image: url(/assets/sakura.gif);
+    width: 144px;
+    height: 96px;
+    pointer-events: auto;
+    user-drag: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.particle {
+    user-select: none;
+    user-drag: none;
+    -webkit-user-drag: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    pointer-events: none;
+}
+
+.sakura:hover {
+    cursor: url(/assets/alternate-cursor.png) 32 16, pointer;
+}
+
+@media (max-height: 390px) {
+    .sakura {
+        top: calc(100% - 96px - 10px);
+        left: calc(100% - 144px + 5px);
+    }
+}
