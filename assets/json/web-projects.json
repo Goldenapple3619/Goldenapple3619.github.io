@@ -9,6 +9,16 @@
             }
         ]
     },
+        {
+        "title": "Website for my game studio",
+        "description": "A website in pure HTML, CSS, JS for my game studio.",
+        "links": [
+            {
+                "name": "link to the website",
+                "url": "https://cnstudio.dev"
+            }
+        ]
+    },
     {
         "title": "Personal website",
         "description": "A personal static website written in pure HTML, CSS and JavaScript with no third party library or framework.",
