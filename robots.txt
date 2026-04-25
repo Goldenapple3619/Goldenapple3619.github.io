@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://Goldenapple3619.github.io/sitemap.xml
