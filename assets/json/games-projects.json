@@ -1,7 +1,7 @@
 [
     {
         "description": "A complete game engine written in pure C allowing 3D rendering, 2D rendering, GUI rendering, etc., using SDL2 and OpenGL.",
-        "banner": "/assets/CNEngine_banner_XL.png",
+        "banner": "/assets/CNEngine_banner_XL.webp",
         "links": [
             {
                 "name": "link to the repository",

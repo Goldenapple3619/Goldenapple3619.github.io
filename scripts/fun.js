@@ -181,7 +181,7 @@ var _spawn_heart = (() => {
         dom.style.zIndex = "10";
         dom.style.width = "20px";
         dom.style.height = "20px";
-        dom.style.backgroundImage = "url(/assets/heart-s.svg)";
+        dom.style.backgroundImage = "url(/assets/heart.svg)";
         dom.style.backgroundSize = "contain";
         dom.style.backgroundRepeat = "no-repeat";
         dom.style.backgroundPosition = "center";
@@ -217,6 +217,32 @@ var _spawn_heart = (() => {
         if (s) {
             s.addEventListener("click", _spawn_heart);   
             document.querySelector(".sakura").ondragstart = () => false;
+        }
+    });
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", _loaded);
+    } else {
+        _loaded();
+    }
+})();
+
+(() => {
+    const THEMES = ["theme-default", "theme-default-blue", "theme-default-simple", "theme-default-simple-contrast"];
+    var actualTheme = THEMES.findIndex((val) => val == localStorage.getItem("theme")) != -1 ? THEMES.findIndex((val) => val == localStorage.getItem("theme")) : 0;
+
+    let _loaded = (() => {
+        document.documentElement.className = THEMES[actualTheme];
+
+        let s = document.querySelector(".theme-button");
+        if (s) {
+            s.addEventListener("click", () => {
+                actualTheme = (actualTheme + 1) % THEMES.length;
+
+                localStorage.setItem("theme", THEMES[actualTheme])
+
+                document.documentElement.className = THEMES[actualTheme];
+            });
         }
     });
 

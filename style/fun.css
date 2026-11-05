@@ -46,7 +46,7 @@
 }
 
 .sakura:hover {
-    cursor: url(/assets/alternate-cursor.png) 32 16, pointer;
+    cursor: url(/assets/alternate-cursor.webp) 32 16, pointer;
 }
 
 @media (max-height: 390px) {

@@ -1,0 +1,26 @@
+.theme-default-simple:root {
+    --bg-color-main: rgb(229, 229, 229);
+
+    --text-color: #404040;
+    --text-color-muted: #606060;
+    --text-color-reverse: white;
+
+    --primary-color: rgb(107, 107, 107);
+    --secondary-color: rgb(228, 228, 228);
+
+    --bg-color-btn-inactive: rgba(0, 0, 0, 0.06);
+
+    --link-color: #7b7b7b;
+    --link-color-hover: #bcbcbc;
+
+    --dark-border: #424242;
+    --light-border: #fefefe;
+
+    --dark-border-muted: #707070;
+    --light-border-muted: #d0d0d0;
+
+    --primary-border: rgb(98, 98, 98);
+
+    --bg-color-overlay-item: rgba(0,0,0,0.5);
+    --text-color-overlay-item: white;
+}
